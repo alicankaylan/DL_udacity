@@ -1,0 +1,9 @@
+import numpy as np
+
+# Write a function that takes as input two lists Y, P,
+# and returns the float corresponding to their cross-entropy.
+def cross_entropy(Y, P):
+    ce = 0
+    for k in zip(Y,P):
+        ce -= np.log(k[1]) if k[0]==1 else np.log(1-k[1])
+    return ce
